@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background: #f0f0f0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 50px);
+    grid-template-rows: repeat(9, 50px);
+    gap: 2px;
+    margin: 20px auto;
+    width: max-content;
+}
+
+#sudoku-grid input {
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #999;
+}
+
+#sudoku-grid input:nth-child(3n) {
+    border-right: 2px solid #000;
+}
+
+#sudoku-grid input:nth-child(27n),
+#sudoku-grid input:nth-child(54n),
+#sudoku-grid input:nth-child(81n) {
+    border-bottom: 2px solid #000;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+}
