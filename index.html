@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Tetris Game</title>
-	<style>
-		body { font-family: Arial, sans-serif; }
-		#game { display: flex; flex-direction: column; align-items: center; }
-		#board { display: grid; grid-template-columns: repeat(10, 30px); grid-template-rows: repeat(20, 30px); border: 2px solid #333; }
-		.cell { width: 30px; height: 30px; border: 1px solid #ccc; }
-		.active { background-color: red; }
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        canvas { border: 1px solid black; display: block; margin: 20px auto; }
+        #score { text-align: center; font-size: 24px; }
+    </style>
 </head>
 <body>
-	<div id="game">
-		<h1>Tetris Game</h1>
-		<input type="text" id="playerName" placeholder="Enter your name" />
-		<button id="startGame">Start Game</button>
-		<div id="score">Score: 0</div>
-		<div id="board"></div>
-		<div id="leaderboard"></div>
-	</div>
-	<script>
-		const boardEl = document.getElementById('board');
-		const scoreEl = document.getElementById('score');
-		const playerNameInput = document.getElementById('playerName');
-		const startGameButton = document.getElementById('startGame');
-		let score = 0;
+    <h1 style="text-align:center;">Tetris Game</h1>
+    <canvas id="tetris" width="300" height="600"></canvas>
+    <div id="score">Score: 0</div>
+    <input type="text" id="playerName" placeholder="Enter your name" style="text-align: center; display: block; margin: 20px auto;">
+    <script>
+        const canvas = document.getElementById('tetris');
+        const context = canvas.getContext('2d');
+        // Game variables
+        let score = 0;
+        let playerName = '';
+        const shapes = [...]; // Define Tetris shapes here
 
-		startGameButton.addEventListener('click', startGame);
+        function draw() {
+            // Implement your drawing logic here
+        }
 
-		function startGame() {
-			score = 0;
-			updateScore();
-			// Initialize game logic here.
-		}
+        function update() {
+            // Implement your update logic here
+        }
 
-		function updateScore() {
-			scoreEl.textContent = 'Score: ' + score;
-		}
+        function gameOver() {
+            // Implement game over logic
+        }
 
-		// Game logic functions will go here.
-		// Functions for handling falling blocks, game update, and key handling.
-	</script>
+        document.addEventListener('keydown', (event) => {
+            // Implement keyboard controls based on event.key
+        });
+
+        document.getElementById('playerName').addEventListener('change', (event) => {
+            playerName = event.target.value;
+            // Perhaps send this player name to backend API
+        });
+
+        function startGame() {
+            // Start game logic
+        }
+        startGame();
+    </script>
 </body>
 </html>
